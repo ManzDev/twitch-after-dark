@@ -47,8 +47,8 @@ const update = () => {
   elements.forEach(element => moveElement(element));
 };
 
-const enableKey = (ev) => {
-  const isKey = ev.key === "Enter";
+const enableKey = (key) => {
+  const isKey = key === "Enter";
 
   if (isKey) {
     elements.forEach(element => {
@@ -58,6 +58,6 @@ const enableKey = (ev) => {
   }
 };
 
-addEventListener("keydown", (ev) => enableKey(ev), { once: true });
+addEventListener("keydown", (ev) => enableKey(ev.key), { once: true });
 
 setInterval(() => update(), 25);
