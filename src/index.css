@@ -1,0 +1,121 @@
+html,
+body {
+  background-color: #111;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  color: white;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  display: none;
+}
+
+.toaster {
+  --flap-animation: flap 0.2s steps(4) infinite alternate;
+  --size: 64px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/toaster.gif");
+  transform: translate(var(--x, 80vw), var(--y, 10vh));
+  animation: var(--flap-animation);
+
+  /* , fly 25s linear infinite; */
+}
+
+.paper {
+  --size: 48px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/toilet-paper.png");
+  transform: translate(var(--x, 80vw), var(--y, 10vh));
+}
+
+.manzhead {
+  --flap-animation: manz-flap 0.2s steps(4) infinite;
+  --size: 18px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/manzhead.png");
+  transform: scale(4) translate(var(--x, 80vw), var(--y, 10vh));
+  animation: var(--flap-animation);
+  image-rendering: pixelated;
+}
+
+.plunger {
+  --size: 52px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/plunger.png");
+  transform: translate(var(--x, 80vw), var(--y, 10vh));
+}
+
+.toilet {
+  --toilet-flap-animation: toilet-flap 0.4s steps(6) infinite;
+  --size: 85px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/toilet.png");
+  transform: translate(var(--x, 80vw), var(--y, 10vh));
+  animation: var(--toilet-flap-animation);
+}
+
+.toast {
+  --size: 64px;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-image: url("assets/toast.gif");
+  transform: translate(var(--x, 80vw), var(--y, 10vh));
+}
+
+@keyframes flap {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: -256px;
+  }
+}
+
+@keyframes manz-flap {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: -72px;
+  }
+}
+
+@keyframes toilet-flap {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: -510px;
+  }
+}
+
+@keyframes fly {
+  to {
+    transform: translate(calc(var(--x) - 90vw), calc(var(--y) + 90vh));
+  }
+}
